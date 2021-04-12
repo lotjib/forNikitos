@@ -12,10 +12,24 @@
  </head>
  <body class="c-app">
  <h1>Hello, world!</h1>
+  <div id="map">
+
+</div>
 
  <!-- Optional JavaScript -->
  <!-- Popper.js first, then CoreUI JS -->
  <script src="https://unpkg.com/@popperjs/core@2"></script>
  <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+<script>
+let map = documentGetElementById('map');
+let massive = [];
+for(let x = 0, x <= 20, x++){
+ for(let y = 0, y <= 20, y++){
+   let object = { id: i, coordinates: [x, y]};
+   massive.push(object);
+ }
+}
+console.log(massive);
+</script>
  </body>
 </html>
