@@ -18,7 +18,7 @@
  <h1>Hello, world!</h1>
   <div id="map">
     <template>
-     <div class="kvadratik" v-if="coordinates" v-for="coord in coordinates">
+     <div class="kvadratik" v-if="coordinates" v-for="coord in coordinates" :style="'top: ' + coord.coordinates.y * 64 + 'px;' + 'left: ' + coord.coordinates.x * 64 + 'px;'">
        {{coord.id}}
      </div>
    </template>
@@ -40,7 +40,7 @@ var map = new Vue({
     let i = 0;
     for(x = 0; x <= 20; x++){
      for(y = 0; y <= 20; y++){
-       let object = { id: i, coordinates: [x, y]};
+       let object = { id: i, coordinates: {x: x, y: y}};
        i++;
        this.coordinates.push(object);
      }
