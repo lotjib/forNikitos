@@ -9,30 +9,45 @@
  <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
 
  <title>CoreUI</title>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <style>
+   
+  </style>
  </head>
  <body class="c-app">
  <h1>Hello, world!</h1>
   <div id="map">
-
-</div>
+    <template>
+     <div class="kvadratik" v-if="coordinates" v-for="coord in coordinates">
+       {{coord.id}}
+     </div>
+   </template>
+  </div>
 
  <!-- Optional JavaScript -->
  <!-- Popper.js first, then CoreUI JS -->
  <script src="https://unpkg.com/@popperjs/core@2"></script>
  <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
 <script>
-let map = document.getElementById('map');
-let massive = [];
- let i = 0;
-for(x = 0; x <= 20; x++){
- for(y = 0; y <= 20; y++){
-   let object = { id: i, coordinates: [x, y]};
-   i++;
-   massive.push(object);
- }
-}
-console.log(massive);
- console.log(massive);
+var map = new Vue({
+  el: '#map',
+  data(){
+    return {
+       coordinates: [],
+    }
+  },
+  mounted(){
+    let i = 0;
+    for(x = 0; x <= 20; x++){
+     for(y = 0; y <= 20; y++){
+       let object = { id: i, coordinates: [x, y]};
+       i++;
+       this.coordinates.push(object);
+     }
+    }
+  },
+  
+})
 </script>
  </body>
 </html>
