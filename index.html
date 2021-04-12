@@ -20,13 +20,17 @@
   </style>
  </head>
  <body class="c-app">
+  <div class="row">
  <h1>Hello, world!</h1>
+  </div>
+  <div class="row">
   <div id="map">
     <template>
      <div class="kvadratik" v-if="coordinates" v-for="coord in coordinates" :style="'top: ' + coord.coordinates.y * 64 + 'px;' + 'left: ' + coord.coordinates.x * 64 + 'px;'">
        {{coord.id}}
      </div>
    </template>
+  </div>
   </div>
 
  <!-- Optional JavaScript -->
