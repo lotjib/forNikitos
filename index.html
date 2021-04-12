@@ -23,9 +23,11 @@
 <script>
 let map = document.getElementById('map');
 let massive = [];
+ let i = 0;
 for(x = 0; x <= 20; x++){
  for(y = 0; y <= 20; y++){
    let object = { id: i, coordinates: [x, y]};
+   i++;
    massive.push(object);
  }
 }
