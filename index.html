@@ -20,19 +20,20 @@
   </style>
  </head>
  <body class="c-app">
+<main class="row">
   <div class="col-12">
- <h1>Hello, world!</h1>
+    <h1>Hello, world!</h1>
   </div>
   <div class="col-12">
-  <div id="map">
+   <div id="map">
     <template>
      <div class="kvadratik" v-if="coordinates" v-for="coord in coordinates" :style="'top: ' + coord.coordinates.y * 64 + 'px;' + 'left: ' + coord.coordinates.x * 64 + 'px;'">
-       {{coord.id}}
+       <div class="card w-100 h-100">{{coord.id}}</div>
      </div>
-   </template>
+    </template>
+   </div> 
   </div>
-  </div>
-
+</main>
  <!-- Optional JavaScript -->
  <!-- Popper.js first, then CoreUI JS -->
  <script src="https://unpkg.com/@popperjs/core@2"></script>
